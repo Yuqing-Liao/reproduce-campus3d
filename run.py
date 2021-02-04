@@ -184,11 +184,15 @@ def train(args, io, cfg, HM):
                 io.cprint('consistency score: {}'.format(scores))
         io.cprint('test aver acc: {}'.format({i: crt*1.0/total_num for i, crt in enumerate(all_correct)}))
         io.cprint('eval avg class IoU: {}'.format('\n'.join([str(m.avg_iou()) for m in cfs_mtx_list])))
-
-
         if epoch % 5 == 0:
-            torch.save(model.module.state_dict(), 'checkpoints/%s/models/model.t7' % (args.exp_name))
-    torch.save(model.module.state_dict(), 'checkpoints/%s/models/model_final.t7' % (args.exp_name))
+            if len(cfg.DEVICES.GPU_ID) == 1:
+                torch.save(model.state_dict(), 'checkpoints/%s/models/model.t7' % (args.exp_name))
+            else:
+                torch.save(model.module.state_dict(), 'checkpoints/%s/models/model.t7' % (args.exp_name))
+    if len(cfg.DEVICES.GPU_ID) == 1:
+        torch.save(model.state_dict(), 'checkpoints/%s/models/model_final.t7' % (args.exp_name))
+    else:
+        torch.save(model.module.state_dict(), 'checkpoints/%s/models/model_final.t7' % (args.exp_name))
 
 
 if __name__ == "__main__":
