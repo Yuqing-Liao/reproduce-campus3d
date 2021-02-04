@@ -1,0 +1,33 @@
+TRAIN:
+  LEARNING_RATE: 0.005
+  MOMENTUM: 0.9
+  BATCH_SIZE: 64
+  MAX_EPOCH: 150
+  SCHEDULER: 'cos' # 'step'
+  IS_PRETRAINED: true
+  PRETRAINED_MODEL_PATH: '/home/lixk/liaoyq/Campus3D_v2/checkpoints/pointnet2_v2/models/model_MT2.t7'
+  OUTPUT_DIR: '/home/liaoyq/Campus3D_v2/log/'
+  DROPOUT_RATE: 0.5
+  MC_LEVEL: 5 # if MC, use 0, 1, 2, 3, 4 to set which classifier to be trained instead
+  CONSISTENCY_LOSS: false
+  CONSISTENCY_WEIGHTS:
+    - 0.05
+    - 0.05
+    - 0.05
+    - 0.05
+  LOSS_WEIGHTS:
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+
+
+DEVICES:
+  GPU_ID: 
+    - 0
+    - 1
+    - 2
+    - 3
+  SEED: 1
+
