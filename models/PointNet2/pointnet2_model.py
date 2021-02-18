@@ -4,22 +4,34 @@ import torch.nn.functional as F
 from .pointnet_util import PointNetSetAbstraction, PointNetFeaturePropagation
 
 class PointNet2(nn.Module):
-    def __init__(self, cfg=None):
+    def __init__(self, cfg=None, args=None):
         super(PointNet2, self).__init__()
         self.cfg = cfg
         self.num_class = cfg.DATASET.DATA.LABEL_NUMBER
-        self.level = cfg.TRAIN.MC_LEVEL
+        self.level = args.mc_level
 
         self.sa1 = PointNetSetAbstraction(1024, 0.1, 32, 6 + 3, [32, 32, 64], False)
         self.sa2 = PointNetSetAbstraction(256, 0.2, 32, 64 + 3, [64, 64, 128], False)
         self.sa3 = PointNetSetAbstraction(64, 0.4, 32, 128 + 3, [128, 128, 256], False)
         self.sa4 = PointNetSetAbstraction(16, 0.8, 32, 256 + 3, [256, 256, 512], False)
         
-        self.decoder0 = PointNet2Decoder(self.num_class[0], self.cfg)
-        self.decoder1 = PointNet2Decoder(self.num_class[1], self.cfg)
-        self.decoder2 = PointNet2Decoder(self.num_class[2], self.cfg)
-        self.decoder3 = PointNet2Decoder(self.num_class[3], self.cfg)
-        self.decoder4 = PointNet2Decoder(self.num_class[4], self.cfg)
+        if self.level == 0:
+            self.decoder0 = PointNet2Decoder(self.num_class[0], self.cfg)
+        elif self.level == 1:
+            self.decoder1 = PointNet2Decoder(self.num_class[1], self.cfg)
+        elif self.level == 2:
+            self.decoder2 = PointNet2Decoder(self.num_class[2], self.cfg)
+        elif self.level == 3:
+            self.decoder3 = PointNet2Decoder(self.num_class[3], self.cfg)
+        elif self.level == 4:
+            self.decoder4 = PointNet2Decoder(self.num_class[4], self.cfg)
+        elif self.level == -1:
+            self.decoder0 = PointNet2Decoder(self.num_class[0], self.cfg)
+            self.decoder1 = PointNet2Decoder(self.num_class[1], self.cfg)
+            self.decoder2 = PointNet2Decoder(self.num_class[2], self.cfg)
+            self.decoder3 = PointNet2Decoder(self.num_class[3], self.cfg)
+            self.decoder4 = PointNet2Decoder(self.num_class[4], self.cfg)
+        
 
     def forward(self, xyz):
         l0_points = xyz
@@ -34,22 +46,28 @@ class PointNet2(nn.Module):
                       l2_xyz, l2_points,
                       l3_xyz, l3_points,
                       l4_xyz, l4_points]
-        x0 = self.decoder0(*input_list)
-        x1 = self.decoder1(*input_list)
-        x2 = self.decoder2(*input_list)
-        x3 = self.decoder3(*input_list)
-        x4 = self.decoder4(*input_list)
+        
         if self.level == 0:
+            x0 = self.decoder0(*input_list)
             return x0
         elif self.level == 1:
+            x1 = self.decoder1(*input_list)
             return x1
         elif self.level == 2:
+            x2 = self.decoder2(*input_list)
             return x2
         elif self.level == 3:
+            x3 = self.decoder3(*input_list)
             return x3
         elif self.level == 4:
+            x4 = self.decoder4(*input_list)
             return x4
-        elif self.level == 5:
+        elif self.level == -1:
+            x0 = self.decoder0(*input_list)
+            x1 = self.decoder1(*input_list)
+            x2 = self.decoder2(*input_list)
+            x3 = self.decoder3(*input_list)
+            x4 = self.decoder4(*input_list)
             return [x0, x1, x2, x3, x4]
             
 class PointNet2Decoder(nn.Module):
@@ -86,4 +104,5 @@ if __name__=='__main__':
     rand_input = torch.rand(32, 6, 2048).to(device)
     output = model(rand_input)
     print(output)
+        
         
