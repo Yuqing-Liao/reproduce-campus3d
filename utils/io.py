@@ -16,9 +16,9 @@ class IOStream():
 
 def save_model(model, cfg, args, name):
     if len(cfg.DEVICES.GPU_ID) == 1:
-        torch.save(model.state_dict(), 'checkpoints/%s/models/'+name+'.t7' % (args.exp_name))
+        torch.save(model.state_dict(), 'checkpoints/%s/models/' % (args.exp_name)+name+'.t7')
     else:
-        torch.save(model.module.state_dict(), 'checkpoints/%s/models/'+name+'.t7' % (args.exp_name))
+        torch.save(model.module.state_dict(), 'checkpoints/%s/models/' % (args.exp_name)+name+'.t7')
         
         
 def load_model(args, cfg, model):
