@@ -7,7 +7,7 @@
 ## Evaluation
 ## MODEL ZOO
 ### MODELS
-|Model|Method|MC Level|Initial Learning<br>Rate|Momentum|Max Epoch|Scheduler|Dropout Rate|Download<br>Link|
+|Model|Method|MC Level|Initial Learning<br>Rate|Momentum|Max Epoch|Scheduler|Dropout<br>Rate|Download<br>Link|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
 |Pointnet2|MC|0|0.01|0.9|50|cos|0.5||
 |Pointnet2|MC|1|0.01|0.9|50|cos|0.5||
