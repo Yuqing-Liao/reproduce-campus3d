@@ -11,9 +11,3 @@
 #### DGCNN
 #### PointCNN
 ### SEMANTIC SEGMENTATION
-
-
-<>(#### Multi-task Learning (MT))
-<>#### Multi-task Learning without Consistency Loss (MTnc)
-<>#### Multi-classifier Method (MC)
-<>#### Hierarchical Ensemble (HE)
