@@ -11,3 +11,5 @@
 #### DGCNN
 #### PointCNN
 ### SEMANTIC SEGMENTATION
+|Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
+-:|:-:|:-:|:-:|:-:|:-:|:-
