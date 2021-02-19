@@ -7,6 +7,9 @@
 ## Evaluation
 ## MODEL ZOO
 ### MODELS
+|Model|Method|Initial Learning<br>Rate|Momentum|Max Epoch|Scheduler|Dropout Rate|Download<br>Link|
+-:|:-:|:-:|:-:|:-:|:-:|:-:|:-
+|Pointnet2||||||||
 #### PointNet++
 #### DGCNN
 #### PointCNN
