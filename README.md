@@ -25,16 +25,16 @@ In this way, the output files will be saved in 'check/EXP_NAME'.
 |Model|Method|MC Level|Training Process|Scheduler|Dropout<br>Rate|Download<br>Link|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 |Pointnet++|MC|0|50 epochs(lr=0.01)|cos|0.5|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
-|Pointne++|MC|1|50 epochs(lr=0.01)|cos|0.5|[MC1]()|
-|Pointnet++|MC|2|50 epochs(lr=0.01)|cos|0.5|[MC2]()|
-|Pointnet++|MC|3|50 epochs(lr=0.01)|cos|0.5|[MC3]()|
-|Pointnet++|MC|4|50 epochs(lr=0.01)|cos|0.5|[MC4]()|
-|Pointnet++|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[pointnet2_MTnc]()|
-|PointCNN|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[pointcnn_MTnc]()|
-|DGCNN|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[dgcnn_MTnc]()|
+|Pointne++|MC|1|50 epochs(lr=0.01)|cos|0.5|[MC1](https://drive.google.com/file/d/1oUOyuszPHDjZsRDhdJGwIHXxImllvvRT/view?usp=sharing)|
+|Pointnet++|MC|2|50 epochs(lr=0.01)|cos|0.5|[MC2](https://drive.google.com/file/d/1peZa8j-HMI4-NCfnSSjpYXrHmI1M3AG1/view?usp=sharing)|
+|Pointnet++|MC|3|50 epochs(lr=0.01)|cos|0.5|[MC3](https://drive.google.com/file/d/1aXPemqQCXWL33DdlMB86jnhNCx7-hoNB/view?usp=sharing)|
+|Pointnet++|MC|4|50 epochs(lr=0.01)|cos|0.5|[MC4](https://drive.google.com/file/d/1ilJXKI42pcbenK7Q2LRWzOAm4ui6teWI/view?usp=sharing)|
+|Pointnet++|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[pointnet2_MTnc](https://drive.google.com/file/d/1QducufhXMk65LO5ZNJx-1kLRg42yf2L6/view?usp=sharing)|
+|PointCNN|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[pointcnn_MTnc](https://drive.google.com/file/d/1NAaNVMtq79AyxYhS8Caz2LpTyxl0tntw/view?usp=sharing)|
+|DGCNN|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[dgcnn_MTnc](https://drive.google.com/file/d/1-CQHSkdda30j7Zq9HyC0ZITGsdiHsZ0W/view?usp=sharing)|
 |Pointnet++|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[pointnet2_MT]()|
-|PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT]()|
-|DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT]()|
+|PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT](https://drive.google.com/file/d/1l9kda3z5359aI08ZpdRDJRm6YItvv_3N/view?usp=sharing)|
+|DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
 
 ### Semantic segmentation benchmarks for model PointNet2 with different methods <br>
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
