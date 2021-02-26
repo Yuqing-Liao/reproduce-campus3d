@@ -4,8 +4,9 @@
 ## Training
 ### Train from scratch
 Check the configuration files in `config/` and run experiments, eg:
-
-  python run.py --model 'pointnet2' --mc_level -1 --exp_name 'pointnet2_MT'
+'''
+python run.py --model 'pointnet2' --mc_level -1 --exp_name 'pointnet2_MT'
+'''
 ### Train from pretrained model
 ## Evaluation
 ## MODEL ZOO
