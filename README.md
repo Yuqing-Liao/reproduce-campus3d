@@ -58,7 +58,7 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 |mIoU%|DGCNN|89.6|80.1|63.3|43.1|28.4|
 
 ### Semantic segmentation benchmarks(OA%) for different HL for different HL methods
-|Method|C^1^|C^2^|C^3^|C^4^|C^5^|
+|Method|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
 :-:|:-:|:-:|:-:|:-:|:-:
 
 
