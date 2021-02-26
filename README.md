@@ -1,14 +1,24 @@
 # Campus3D
 ## Introduction
+
 ## Installation
+```
+conda env create -f environment.yml
+```
 ## Training
 ### Train from scratch
-Check the configuration files in `config/` and run experiments, eg:
+To apply training of the model, please check the configuration files in `config/` and run experiments, eg:
 ```
-python run.py --model 'pointnet2' --mc_level -1 --exp_name 'pointnet2_MT'
+python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
+In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
 ### Train from pretrained model
 ## Evaluation
+To apply evaluation of the model on the test set:
+```
+python run.py --eval true --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
+```
+In this way, the output files will be saved in 'check/EXP_NAME'.
 ## MODEL ZOO
 ### Models
 |Model|Method|MC Level|Training Process|Scheduler|Dropout<br>Rate|Download<br>Link|
