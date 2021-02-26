@@ -7,19 +7,19 @@ conda env create -f environment.yml
 ```
 ## Training
 ### Train from scratch
-To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of 'IS_PRETRAINED' to false and then run experiments, eg:
+To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false and then run experiments, eg:
 ```
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
 ### Train from pretrained model
-Pretrained models are available on Google Drive, and they can be downloaded through the link presented in the following table. You can train either from the downloaded models or from your own pretrained models. To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of 'IS_PRETRAINED' to false, 'PRETRAINED_MODEL_PATH' to the path of the model to train and then run experiments just the same as the above example.
+Pretrained models are available on Google Drive, and they can be downloaded through the link presented in the following table. You can train either from the downloaded models or from your own pretrained models. To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false, `PRETRAINED_MODEL_PATH` to the path of the model to train and then run experiments just the same as the above example.
 ## Evaluation
-To apply evaluation of the model on the test set, please first check the configuration files in `config/`. Particularly you need to change the value of 'PRETRIANED_MODEL_PATH' to the path of the model to evaluate and then run experiments, eg:
+To apply evaluation of the model on the test set, please first check the configuration files in `config/`. Particularly you need to change the value of `PRETRIANED_MODEL_PATH` to the path of the model to evaluate and then run experiments, eg:
 ```
 python run.py --eval true --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
-In this way, the output files will be saved in 'check/EXP_NAME'.
+In this way, the output files will be saved in `check/EXP_NAME`.
 ## MODEL ZOO
 ### Models
 |Model|Method|MC Level|Training Process|Scheduler|Dropout<br>Rate|Download<br>Link|
