@@ -21,6 +21,7 @@
 |DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT]()|
 |PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT]()|
 ### Test results for semantic segmentation 
+Semantic segmentation benchmarks for model PointNet2 with different methods
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 |C1|ground|85.4|86.4|85.3|86.1|86.1|
@@ -55,3 +56,5 @@
 |C5|artificial_landscape|0.0|0.0|0.0|0.0|0.0|
 |C5|lamp|0.0|0.0|0.0|0.0|0.0|
 |C5|others|0.0|0.0|0.0|0.0|0.0|
+
+Semantic segmentation benchmarks for three feature learning models with MT+HE
