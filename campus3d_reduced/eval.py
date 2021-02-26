@@ -38,14 +38,12 @@ def test(args, io, cfg, HM):
             model = load_model(args, cfg, model)
     else:
         models = []
-        args.mc_level = -1
         for i in range(5):
-            cfg.TRAIN.PRETRAINED_MODEL_PATH = 'checkpoints/MC'+str(i)+'_/models/model.t7'
+            cfg.TRAIN.PRETRAINED_MODEL_PATH = 'checkpoints/MC'+str(i)+'_/models/model_final.t7'
+            args.mc_level = i
             model = PointNet2(cfg, args).to(device)
             model = load_model(args, cfg, model)
-            model.level = i
             models.append(model)
-        args.mc_level = 0
             
 
     test_loss = 0.0
