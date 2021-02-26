@@ -20,38 +20,38 @@
 |Pointnet2|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[pointnet2_MT]()|
 |DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT]()|
 |PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT]()|
-### Test results of semantic segmentation 
+### Test results for semantic segmentation 
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
-|C1|ground||||||
-|C1|construction||||||
-|C2|natural||||||
-|C2|man_made||||||
-|C2|construction||||||
-|C3|natural||||||
-|C3|play_field||||||
-|C3|path&stair||||||
-|C3|driving_road||||||
-|C3|construction||||||
-|C4|natural||||||
-|C4|play_field||||||
-|C4|path&stair||||||
-|C4|vehicle||||||
-|C4|not vehicle||||||
-|C4|building||||||
-|C4|link||||||
-|C4|facility||||||
-|C5|natural||||||
-|C5|play_field||||||
-|C5|sheltered||||||
-|C5|unsheltered||||||
-|C5|bus_stop||||||
-|C5|car||||||
-|C5|bus||||||
-|C5|not vehicle||||||
-|C5|wall||||||
-|C5|roof||||||
-|C5|link||||||
-|C5|artificial_landscape||||||
-|C5|lamp||||||
-|C5|others||||||
+|C1|ground|85.4|||||
+|C1|construction|79.9|||||
+|C2|natural|81.1|||||
+|C2|man_made|58.5|||||
+|C2|construction|78.8|||||
+|C3|natural|79.2|||||
+|C3|play_field|62.9|||||
+|C3|path&stair|8.7|||||
+|C3|driving_road|58.4|||||
+|C3|construction|76.6|||||
+|C4|natural|81.0|||||
+|C4|play_field|57.3|||||
+|C4|path&stair|9.3|||||
+|C4|vehicle|16.6|||||
+|C4|not vehicle|57.9|||||
+|C4|building|76.5|||||
+|C4|link|0.0|||||
+|C4|facility|0.0|||||
+|C5|natural|80.1|||||
+|C5|play_field|52.7|||||
+|C5|sheltered|10.6|||||
+|C5|unsheltered|7.6|||||
+|C5|bus_stop|0.0|||||
+|C5|car|18.1|||||
+|C5|bus|0.0|||||
+|C5|not vehicle|58.1|||||
+|C5|wall|46.5|||||
+|C5|roof|43.1|||||
+|C5|link|0.2|||||
+|C5|artificial_landscape|0.0|||||
+|C5|lamp|0.0|||||
+|C5|others|0.0|||||
