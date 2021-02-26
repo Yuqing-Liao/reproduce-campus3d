@@ -24,7 +24,7 @@ In this way, the output files will be saved in 'check/EXP_NAME'.
 ### Models
 |Model|Method|MC Level|Training Process|Scheduler|Dropout<br>Rate|Download<br>Link|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
-|Pointnet++|MC|0|50 epochs(lr=0.01)|cos|0.5|[MC0]()|
+|Pointnet++|MC|0|50 epochs(lr=0.01)|cos|0.5|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
 |Pointne++|MC|1|50 epochs(lr=0.01)|cos|0.5|[MC1]()|
 |Pointnet++|MC|2|50 epochs(lr=0.01)|cos|0.5|[MC2]()|
 |Pointnet++|MC|3|50 epochs(lr=0.01)|cos|0.5|[MC3]()|
