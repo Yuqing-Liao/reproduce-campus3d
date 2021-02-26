@@ -1,7 +1,7 @@
 # Campus3D
 
 ## Introduction
-The repository contains the re-implementation of this [ACM MM 2020 Paper](https://3d.dataset.site) based on the [repository](https://github.com/shinke-li/Campus3D/). It also presents the reproduced results of the supported paper with trained models in MODEL_ZOO. The reduced version of Campus3D dataset can be donwloaded from the [official website](https://3d.dataset.site) or the [alternative](https://3d.nus.app). 
+The repository contains the re-implementation of this [ACM MM 2020 Paper](https://3d.dataset.site) based on the [repository](https://github.com/shinke-li/Campus3D/). It also presents the reproduced results of the supported paper with trained models in MODEL ZOO. The reduced version of Campus3D dataset can be donwloaded from the [official website](https://3d.dataset.site) or the [alternative](https://3d.nus.app). 
 
 ## Installation
 The whole package can be downloaded by the following command.
@@ -17,7 +17,6 @@ Compressed Campus3D dataset file `campus3d-reduce.zip` can be downloaded from [o
 ```
 cd reproduce-campus3d/data
 unzip campus3d-reduce.zip
-
 ```
 
 ## Training & Evaluation
@@ -44,6 +43,8 @@ python run.py --eval true --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME
 In this way, the output files will be saved in `check/EXP_NAME`.
 
 ## Experiments
+### Heirarchical Learning Experiments
+### Benchmark Experiments
 
 ## MODEL ZOO
 ### Models
