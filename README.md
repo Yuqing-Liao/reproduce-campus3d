@@ -74,17 +74,6 @@ DGCNN [GitHub Link](https://github.com/WangYueFt/dgcnn)
 10|DGCNN|'dgcnn'|MT|-1|50 epochs (lr=0.01) +<br>20 epochs with<br>consistency loss (lr=0.01)|cos|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
 
 ### Benchmark Experiments Results
-#### Semantic segmentation benchmarks(OA%) for different HL methods with model PointNet++
-|Method|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
-:-:|:-:|:-:|:-:|:-:|:-:
-|MC|90.8|86.2|84.4|83.6|73.6|
-|MC+HE|91.4|87.4|86.5|84.8|74.9|
-|MT<sub>nc</sub>|90.6|86.0|85.0|83.1|73.3|
-|MT|91.4|87.4|86.7|84.9|75.2|
-|MT+HE|91.4|87.5|86.7|85.0|75.1|
-
-### Hierarchical Learning Experiments Results
-
 #### Semantic segmentation benchmarks (mIoU% and OA%) for models with MT+HE method
 |Benchmark|Model|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
@@ -94,6 +83,19 @@ DGCNN [GitHub Link](https://github.com/WangYueFt/dgcnn)
 |mIoU%|PointNet++|83.8|74.3|58.0|37.1|22.3|
 |mIoU%|PointCNN|79.7|61.5|42.8|26.3|15.0|
 |mIoU%|DGCNN|89.6|80.1|63.3|43.1|28.4|
+These results are produced by model No.8, No.9 and No.10.
+
+### Hierarchical Learning Experiments Results
+#### Semantic segmentation benchmarks(OA%) for different HL methods with model PointNet++
+|Method|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
+:-:|:-:|:-:|:-:|:-:|:-:
+|MC|90.8|86.2|84.4|83.6|73.6|
+|MC+HE|91.4|87.4|86.5|84.8|74.9|
+|MT<sub>nc</sub>|90.6|86.0|85.0|83.1|73.3|
+|MT|91.4|87.4|86.7|84.9|75.2|
+|MT+HE|91.4|87.5|86.7|85.0|75.1|
+These results are produced by model No.0-4, No.5 and No.8. They demonstrate the effectiveness of the MT+HE method fro HL problem.
+Results with detailed per-class mIoU are displayed below. 
 
 #### Semantic segmentation benchmarks(IoU%) for different HL methods with model PointNet++
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
