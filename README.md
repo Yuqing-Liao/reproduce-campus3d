@@ -47,7 +47,7 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 |PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT](https://drive.google.com/file/d/1l9kda3z5359aI08ZpdRDJRm6YItvv_3N/view?usp=sharing)|
 |DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
 
-### Semantic segmentation benchmarks(mIoU% and OA%) for three feature learning models with MT+HE <br>
+### Semantic segmentation benchmarks(mIoU% and OA%) for three feature learning models with MT+HE 
 |Benchmark|Model|C1|C2|C3|C4|C5|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 |OA%|PointNet++|91.4|87.5|86.7|85.0|75.1|
@@ -57,7 +57,12 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 |mIoU%|PointCNN|79.7|61.5|42.8|26.3|15.0|
 |mIoU%|DGCNN|89.6|80.1|63.3|43.1|28.4|
 
-### Semantic segmentation benchmarks for model PointNet2 with different methods <br>
+### Semantic segmentation benchmarks(OA%) for different HL for different HL methods
+|Method|C^1^|C^2^|C^3^|C^4^|C^5^|
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+
+
+### Semantic segmentation benchmarks(IoU%) for model PointNet2 for different HL methods 
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 |C1|ground|85.4|86.4|85.3|86.1|86.1|
