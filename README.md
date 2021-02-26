@@ -37,19 +37,19 @@ python run.py --eval true --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME
 In this way, the output files will be saved in `check/EXP_NAME`.
 ## MODEL ZOO
 ### Models
-|Model|Method|MC Level|Training Process|Scheduler|Dropout<br>Rate|Download<br>Link|
+|Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
-|Pointnet++|MC|0|50 epochs(lr=0.01)|cos|0.5|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
-|Pointne++|MC|1|50 epochs(lr=0.01)|cos|0.5|[MC1](https://drive.google.com/file/d/1oUOyuszPHDjZsRDhdJGwIHXxImllvvRT/view?usp=sharing)|
-|Pointnet++|MC|2|50 epochs(lr=0.01)|cos|0.5|[MC2](https://drive.google.com/file/d/1peZa8j-HMI4-NCfnSSjpYXrHmI1M3AG1/view?usp=sharing)|
-|Pointnet++|MC|3|50 epochs(lr=0.01)|cos|0.5|[MC3](https://drive.google.com/file/d/1aXPemqQCXWL33DdlMB86jnhNCx7-hoNB/view?usp=sharing)|
-|Pointnet++|MC|4|50 epochs(lr=0.01)|cos|0.5|[MC4](https://drive.google.com/file/d/1ilJXKI42pcbenK7Q2LRWzOAm4ui6teWI/view?usp=sharing)|
-|Pointnet++|MT<sub>nc</sub>|-1|50 epochs(lr=0.01)|cos|0.5|[pointnet2_MTnc](https://drive.google.com/file/d/1QducufhXMk65LO5ZNJx-1kLRg42yf2L6/view?usp=sharing)|
-|PointCNN|MT<sub>nc</sub>|-1|50 epochs(lr=0.01)|cos|0.5|[pointcnn_MTnc](https://drive.google.com/file/d/1NAaNVMtq79AyxYhS8Caz2LpTyxl0tntw/view?usp=sharing)|
-|DGCNN|MT<sub>nc</sub>|-1|50 epochs(lr=0.01)|cos|0.5|[dgcnn_MTnc](https://drive.google.com/file/d/1-CQHSkdda30j7Zq9HyC0ZITGsdiHsZ0W/view?usp=sharing)|
-|Pointnet++|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[pointnet2_MT](https://drive.google.com/file/d/1eY1WZ9JYjXUrCPqLU6UegC_F3pojzAls/view?usp=sharing)|
-|PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT](https://drive.google.com/file/d/1l9kda3z5359aI08ZpdRDJRm6YItvv_3N/view?usp=sharing)|
-|DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
+|PointNet++|'pointnet2'|MC|0|50 epochs(lr=0.01)|cos|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
+|PointNe++|'pointnet2'|MC|1|50 epochs(lr=0.01)|cos|[MC1](https://drive.google.com/file/d/1oUOyuszPHDjZsRDhdJGwIHXxImllvvRT/view?usp=sharing)|
+|PointNet++|'pointnet2'|MC|2|50 epochs(lr=0.01)|cos|[MC2](https://drive.google.com/file/d/1peZa8j-HMI4-NCfnSSjpYXrHmI1M3AG1/view?usp=sharing)|
+|PointNet++|'pointnet2'|MC|3|50 epochs(lr=0.01)|cos|[MC3](https://drive.google.com/file/d/1aXPemqQCXWL33DdlMB86jnhNCx7-hoNB/view?usp=sharing)|
+|PointNet++|'pointnet2'|MC|4|50 epochs(lr=0.01)|cos|[MC4](https://drive.google.com/file/d/1ilJXKI42pcbenK7Q2LRWzOAm4ui6teWI/view?usp=sharing)|
+|PointNet++|'pointnet2'|MT<sub>nc</sub>|-1|50 epochs(lr=0.01)|cos|[pointnet2_MTnc](https://drive.google.com/file/d/1QducufhXMk65LO5ZNJx-1kLRg42yf2L6/view?usp=sharing)|
+|PointCNN|'pointcnn'|MT<sub>nc</sub>|-1|50 epochs(lr=0.01)|cos|[pointcnn_MTnc](https://drive.google.com/file/d/1NAaNVMtq79AyxYhS8Caz2LpTyxl0tntw/view?usp=sharing)|
+|DGCNN|'dgcnn'|MT<sub>nc</sub>|-1|50 epochs(lr=0.01)|cos|[dgcnn_MTnc](https://drive.google.com/file/d/1-CQHSkdda30j7Zq9HyC0ZITGsdiHsZ0W/view?usp=sharing)|
+|Pointnet++|'pointnet2'|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|[pointnet2_MT](https://drive.google.com/file/d/1eY1WZ9JYjXUrCPqLU6UegC_F3pojzAls/view?usp=sharing)|
+|PointCNN|'pointcnn'|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|[pointcnn_MT](https://drive.google.com/file/d/1l9kda3z5359aI08ZpdRDJRm6YItvv_3N/view?usp=sharing)|
+|DGCNN|'dgcnn'|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
 
 ### Semantic segmentation benchmarks(mIoU% and OA%) for three feature learning models with MT+HE 
 |Benchmark|Model|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
