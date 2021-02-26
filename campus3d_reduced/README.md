@@ -3,6 +3,8 @@
 ## Installation
 ## Training
 ### Train from scratch
+
+  Check the configuration files in config/ and run experiments, eg:
 ### Train from pretrained model
 ## Evaluation
 ## MODEL ZOO
