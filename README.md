@@ -1,6 +1,7 @@
 # Campus3D
 ## Introduction
 To facilitate the research of 3D deep learning, the supported work `Campus3D` presents a richly annotated 3D point cloud dataset for multiple outdoor scene understanding tasks. The dataset is generated via the photogrammetry processing on unmanned aerial vehicle (UAV) images of campus with 1.6 km<sup>2</sup> area. One key feature of this dataset is the hierarchical multi-label annotation for each point, which introduces a novel task to 3D scene understanding field, namely, the hierarchical segmentation of 3D point cloud. Based such annotations, the paper proposed a two-stage method including multi-task (MT) learning on each level of label hierarchy and hierarchical ensemble (HE) of predicted results to cope with the hierarchical consistency issue. Besides the framework, the paper also established a benchmark of the hierarchical segmentation task containing three commonly-used 3D deep models `PointNet++`, `PointCNN` and `DGCNN`. 
+
 This repository contains a comprehensive and handy open-source package for reproducing the results in the supported paper.
 ## Installation
 The whole package can be downloaded by the following command.
@@ -46,6 +47,16 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 |PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT](https://drive.google.com/file/d/1l9kda3z5359aI08ZpdRDJRm6YItvv_3N/view?usp=sharing)|
 |DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
 
+### Semantic segmentation benchmarks(mIoU% and OA%) for three feature learning models with MT+HE <br>
+|Benchmark|Model|C1|C2|C3|C4|C5|
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+|OA%|PointNet++|91.4|87.5|86.7|85.0|75.1|
+|OA%|PointCNN|88.9|79.3|78.7|76.8|63.8|
+|OA%|DGCNN|94.7|90.6|89.1|87.2|81.5|
+|mIoU%|PointNet++|83.8|74.3|58.0|37.1|22.3|
+|mIoU%|PointCNN|79.7|61.5|42.8|26.3|15.0|
+|mIoU%|DGCNN|89.6|80.1|63.3|43.1|28.4|
+
 ### Semantic segmentation benchmarks for model PointNet2 with different methods <br>
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
@@ -82,12 +93,3 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 |C5|lamp|0.0|0.0|0.0|0.0|0.0|
 |C5|others|0.0|0.0|0.0|0.0|0.0|
 
-### Semantic segmentation benchmarks(mIoU% and OA%) for three feature learning models with MT+HE <br>
-|Benchmark|Model|C1|C2|C3|C4|C5|
-:-:|:-:|:-:|:-:|:-:|:-:|:-:
-|OA%|PointNet++|91.4|87.5|86.7|85.0|75.1|
-|OA%|PointCNN|88.9|79.3|78.7|76.8|63.8|
-|OA%|DGCNN|94.7|90.6|89.1|87.2|81.5|
-|mIoU%|PointNet++|83.8|74.3|58.0|37.1|22.3|
-|mIoU%|PointCNN|79.7|61.5|42.8|26.3|15.0|
-|mIoU%|DGCNN|89.6|80.1|63.3|43.1|28.4|
