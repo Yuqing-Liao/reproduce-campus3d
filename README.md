@@ -11,15 +11,17 @@
 ### Models
 |Model|Method|MC Level|Training Process|Scheduler|Dropout<br>Rate|Download<br>Link|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
-|Pointnet2|MC|0|50 epochs(lr=0.01)|cos|0.5|[MC0]()|
-|Pointnet2|MC|1|50 epochs(lr=0.01)|cos|0.5|[MC1]()|
-|Pointnet2|MC|2|50 epochs(lr=0.01)|cos|0.5|[MC2]()|
-|Pointnet2|MC|3|50 epochs(lr=0.01)|cos|0.5|[MC3]()|
-|Pointnet2|MC|4|50 epochs(lr=0.01)|cos|0.5|[MC4]()|
-|Pointnet2|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[pointnet2_MTnc]()|
-|Pointnet2|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[pointnet2_MT]()|
-|DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT]()|
+|Pointnet++|MC|0|50 epochs(lr=0.01)|cos|0.5|[MC0]()|
+|Pointne++|MC|1|50 epochs(lr=0.01)|cos|0.5|[MC1]()|
+|Pointnet++|MC|2|50 epochs(lr=0.01)|cos|0.5|[MC2]()|
+|Pointnet++|MC|3|50 epochs(lr=0.01)|cos|0.5|[MC3]()|
+|Pointnet++|MC|4|50 epochs(lr=0.01)|cos|0.5|[MC4]()|
+|Pointnet++|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[pointnet2_MTnc]()|
+|PointCNN|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[pointcnn_MTnc]()|
+|DGCNN|MTnc|-1|50 epochs(lr=0.01)|cos|0.5|[dgcnn_MTnc]()|
+|Pointnet++|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[pointnet2_MT]()|
 |PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT]()|
+|DGCNN|MT|-1|50 epochs(lr=0.01) +<br>20 epochs(lr=0.01)|cos|0.5|[dgcnn_MT]()|
 ### Test results for semantic segmentation 
 #### Semantic segmentation benchmarks for model PointNet2 with different methods
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
@@ -57,5 +59,12 @@
 |C5|lamp|0.0|0.0|0.0|0.0|0.0|
 |C5|others|0.0|0.0|0.0|0.0|0.0|
 
-#### Semantic segmentation benchmarks for three feature learning models with MT+HE
-|Benchmark|Model|C1|C2|MTnc|MT|MT+HE|
+#### Semantic segmentation benchmarks(mIoU% and OA%) for three feature learning models with MT+HE
+|Benchmark|Model|C1|C2|C3|C4|C5|
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+|OA%|PointNet++|91.4|87.5|86.7|85.0|75.1|
+|OA%|PointCNN|88.9|79.3|78.7|76.8|63.8|
+|OA%|DGCNN|94.7|90.6|89.1|87.2|81.5|
+|mIoU%|PointNet++|83.8|74.3|58.0|37.1|22.3|
+|mIoU%|PointCNN|79.7|61.5|42.8|26.3|15.0|
+|mIoU%|DGCNN|89.6|80.1|63.3|43.1|28.4|
