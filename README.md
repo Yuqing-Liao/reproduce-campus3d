@@ -59,7 +59,7 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 
 ### Semantic segmentation benchmarks(OA%) for different HL for different HL methods
 |Method|C^1^|C^2^|C^3^|C^4^|C^5^|
-:-:|:-:|:-:|:-:|:-:|:-:|:-:
+:-:|:-:|:-:|:-:|:-:|:-:
 
 
 ### Semantic segmentation benchmarks(IoU%) for model PointNet2 for different HL methods 
