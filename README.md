@@ -59,7 +59,7 @@ DGCNN [GitHub Link](https://github.com/WangYueFt/dgcnn)
 
 ## MODEL ZOO
 ### Models
-｜No.|Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
+No.|Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
 0|PointNet++|'pointnet2'|MC|0|50 epochs(lr=0.01)|cos|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
 1|PointNe++|'pointnet2'|MC|1|50 epochs(lr=0.01)|cos|[MC1](https://drive.google.com/file/d/1oUOyuszPHDjZsRDhdJGwIHXxImllvvRT/view?usp=sharing)|
@@ -83,6 +83,7 @@ DGCNN [GitHub Link](https://github.com/WangYueFt/dgcnn)
 |mIoU%|PointNet++|83.8|74.3|58.0|37.1|22.3|
 |mIoU%|PointCNN|79.7|61.5|42.8|26.3|15.0|
 |mIoU%|DGCNN|89.6|80.1|63.3|43.1|28.4|
+
 These results are produced by model No.8, No.9 and No.10.
 
 ### Hierarchical Learning Experiments Results
@@ -94,6 +95,7 @@ These results are produced by model No.8, No.9 and No.10.
 |MT<sub>nc</sub>|90.6|86.0|85.0|83.1|73.3|
 |MT|91.4|87.4|86.7|84.9|75.2|
 |MT+HE|91.4|87.5|86.7|85.0|75.1|
+
 These results are produced by model No.0-4, No.5 and No.8. They demonstrate the effectiveness of the MT+HE method fro HL problem.
 Results with detailed per-class mIoU are displayed below. 
 
