@@ -23,7 +23,7 @@ unzip campus3d-reduce.zip
 ### Train from scratch
 To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false and then run experiments, eg:
 ```
-cd campus3d
+cd reproduce-campus3d
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 The 'EXP_NAME' is the user-defined name. In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
@@ -31,7 +31,7 @@ The 'EXP_NAME' is the user-defined name. In this way, the models will be saved i
 ### Train from pretrained model
 Pretrained models are available on Google Drive, and they can be downloaded through the link presented in the following table. You can train either from the downloaded models or from your own pretrained models. To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false, `PRETRAINED_MODEL_PATH` to the path of the model to train and then run experiments, eg:
 ```
-cd campus3d
+cd reproduce-campus3d
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
@@ -39,17 +39,17 @@ In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and othe
 ### Evaluation
 To apply evaluation of the model on the test set, please first check the configuration files in `config/`. Particularly you need to change the value of `PRETRIANED_MODEL_PATH` to the path of the model to evaluate and then run experiments, eg:
 ```
-cd campus3d
+cd reproduce-campus3d
 python run.py --eval true --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the output files will be saved in `check/EXP_NAME`.
 
 ## Experiments
 ### Hierarchical Learning (HL) Experiments
-The hierarchical learning experiments were proposed to present the effectiveness of the **Multi-task and Hierarchical Esemble(MT+HE)** method. **Multi-classifiers(MC)** in each level were also proposed for comparison. To run the training, the argument `--mc_level` can be set as **0-4** and **-1** for MC experiments in 0-4 levels and MT+HE experiments in all levels respectively. In addition, the MT training contains two stage **Multi-task without consistency loss(MT<sub>nc<sub>)** and **Multi-task with consistency loss(MT)** . To run the evaluation, 
+The hierarchical learning experiments were proposed to present the effectiveness of the **Multi-task and Hierarchical Esemble(MT+HE)** method. **Multi-classifiers(MC)** in each level were also proposed for comparison. To run the training, the argument `--mc_level` can be set as **0-4** and **-1** for MC experiments in 0-4 levels and MT+HE experiments in all levels respectively. In addition, the MT training contains two stage **Multi-task Learning without consistency loss(MT<sub>nc</sub>)** and **Multi-task Learbing with consistency loss(MT)**, of which the MT is trained based on the pretrained MT<sub>nc<\sub> model. To run the evaluation, 
 
 ### Benchmark Experiments
-The semantic segmentation bechmark were built with three models PointNet++, PointCNN and DGCNN. They are all conducted the MT+HE method for hierarchical learning on the Campus3D dataset. To run different models, one can change the argument `--model` as the indicated model. Following are the reference repository for PyTorch implementation of 3D deep models,
+The semantic segmentation bechmark were built with three models PointNet++, PointCNN and DGCNN. They are all conducted the MT+HE method for hierarchical learning on the Campus3D dataset. To run different models, one can change the argument `--model` as the indicated model. Following are the reference repository for PyTorch implementation of 3D deep models.
 
 PointNet++ [GitHub Link](https://github.com/yanx27/Pointnet_Pointnet2_pytorch)
 
@@ -59,19 +59,19 @@ DGCNN [GitHub Link](https://github.com/WangYueFt/dgcnn)
 
 ## MODEL ZOO
 ### Models
-|Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
+｜#|Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
-|PointNet++|'pointnet2'|MC|0|50 epochs(lr=0.01)|cos|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
-|PointNe++|'pointnet2'|MC|1|50 epochs(lr=0.01)|cos|[MC1](https://drive.google.com/file/d/1oUOyuszPHDjZsRDhdJGwIHXxImllvvRT/view?usp=sharing)|
-|PointNet++|'pointnet2'|MC|2|50 epochs(lr=0.01)|cos|[MC2](https://drive.google.com/file/d/1peZa8j-HMI4-NCfnSSjpYXrHmI1M3AG1/view?usp=sharing)|
-|PointNet++|'pointnet2'|MC|3|50 epochs(lr=0.01)|cos|[MC3](https://drive.google.com/file/d/1aXPemqQCXWL33DdlMB86jnhNCx7-hoNB/view?usp=sharing)|
-|PointNet++|'pointnet2'|MC|4|50 epochs(lr=0.01)|cos|[MC4](https://drive.google.com/file/d/1ilJXKI42pcbenK7Q2LRWzOAm4ui6teWI/view?usp=sharing)|
-|PointNet++|'pointnet2'|MT<sub>nc</sub>|-1|50 epochs (lr=0.01)|cos|[pointnet2_MTnc](https://drive.google.com/file/d/1QducufhXMk65LO5ZNJx-1kLRg42yf2L6/view?usp=sharing)|
-|PointCNN|'pointcnn'|MT<sub>nc</sub>|-1|50 epochs (lr=0.01)|cos|[pointcnn_MTnc](https://drive.google.com/file/d/1NAaNVMtq79AyxYhS8Caz2LpTyxl0tntw/view?usp=sharing)|
-|DGCNN|'dgcnn'|MT<sub>nc</sub>|-1|50 epochs (lr=0.01)|cos|[dgcnn_MTnc](https://drive.google.com/file/d/1-CQHSkdda30j7Zq9HyC0ZITGsdiHsZ0W/view?usp=sharing)|
-|Pointnet++|'pointnet2'|MT|-1|50 epochs (lr=0.01) +<br>20 epochs with<br>consistency loss (lr=0.01)|cos|[pointnet2_MT](https://drive.google.com/file/d/1eY1WZ9JYjXUrCPqLU6UegC_F3pojzAls/view?usp=sharing)|
-|PointCNN|'pointcnn'|MT|-1|50 epochs (lr=0.01) +<br>30 epochs with<br>consistency loss (lr=0.01)|cos|[pointcnn_MT](https://drive.google.com/file/d/1l9kda3z5359aI08ZpdRDJRm6YItvv_3N/view?usp=sharing)|
-|DGCNN|'dgcnn'|MT|-1|50 epochs (lr=0.01) +<br>20 epochs with<br>consistency loss (lr=0.01)|cos|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
+｜0|PointNet++|'pointnet2'|MC|0|50 epochs(lr=0.01)|cos|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
+｜1|PointNe++|'pointnet2'|MC|1|50 epochs(lr=0.01)|cos|[MC1](https://drive.google.com/file/d/1oUOyuszPHDjZsRDhdJGwIHXxImllvvRT/view?usp=sharing)|
+｜2|PointNet++|'pointnet2'|MC|2|50 epochs(lr=0.01)|cos|[MC2](https://drive.google.com/file/d/1peZa8j-HMI4-NCfnSSjpYXrHmI1M3AG1/view?usp=sharing)|
+｜3|PointNet++|'pointnet2'|MC|3|50 epochs(lr=0.01)|cos|[MC3](https://drive.google.com/file/d/1aXPemqQCXWL33DdlMB86jnhNCx7-hoNB/view?usp=sharing)|
+｜4|PointNet++|'pointnet2'|MC|4|50 epochs(lr=0.01)|cos|[MC4](https://drive.google.com/file/d/1ilJXKI42pcbenK7Q2LRWzOAm4ui6teWI/view?usp=sharing)|
+｜5|PointNet++|'pointnet2'|MT<sub>nc</sub>|-1|50 epochs (lr=0.01)|cos|[pointnet2_MTnc](https://drive.google.com/file/d/1QducufhXMk65LO5ZNJx-1kLRg42yf2L6/view?usp=sharing)|
+｜6|PointCNN|'pointcnn'|MT<sub>nc</sub>|-1|50 epochs (lr=0.01)|cos|[pointcnn_MTnc](https://drive.google.com/file/d/1NAaNVMtq79AyxYhS8Caz2LpTyxl0tntw/view?usp=sharing)|
+｜7|DGCNN|'dgcnn'|MT<sub>nc</sub>|-1|50 epochs (lr=0.01)|cos|[dgcnn_MTnc](https://drive.google.com/file/d/1-CQHSkdda30j7Zq9HyC0ZITGsdiHsZ0W/view?usp=sharing)|
+｜8|Pointnet++|'pointnet2'|MT|-1|50 epochs (lr=0.01) +<br>20 epochs with<br>consistency loss (lr=0.01)|cos|[pointnet2_MT](https://drive.google.com/file/d/1eY1WZ9JYjXUrCPqLU6UegC_F3pojzAls/view?usp=sharing)|
+｜9|PointCNN|'pointcnn'|MT|-1|50 epochs (lr=0.01) +<br>30 epochs with<br>consistency loss (lr=0.01)|cos|[pointcnn_MT](https://drive.google.com/file/d/1l9kda3z5359aI08ZpdRDJRm6YItvv_3N/view?usp=sharing)|
+｜10|DGCNN|'dgcnn'|MT|-1|50 epochs (lr=0.01) +<br>20 epochs with<br>consistency loss (lr=0.01)|cos|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
 
 ### Semantic segmentation benchmarks(OA%) for different HL methods with model PointNet++
 |Method|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
