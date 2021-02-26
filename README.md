@@ -46,10 +46,10 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 
 ## Experiments
 ### Hierarchical Learning (HL) Experiments
-The hierarchical learning experiments were proposed to present the effectiveness of the **Multi-task and Hierarchical Esemble(MT+HE)** method. **Multi-classifiers(MC)** in each level were also proposed for comparison. To run the training, the argument `--mc_level` can be set as **0-4** and **-1** for MC experiments in 0-4 levels and MT+HE experiments in all levels respectively. In addition, the MT training contains two stage **Multi-task Learning without consistency loss(MT<sub>nc</sub>)** and **Multi-task Learbing with consistency loss(MT)**, of which the MT is trained based on the pretrained MT<sub>nc<\sub> model. To run the evaluation, 
+The hierarchical learning experiments were proposed to present the effectiveness of the **Multi-task and Hierarchical Esemble(MT+HE)** method. **Multi-classifiers(MC)** in each level were also proposed for comparison. To run the training, the argument `--mc_level` can be set as **0-4** and **-1** for MC experiments in 0-4 levels and MT+HE experiments in all levels respectively. In addition, the MT training contains two stage **Multi-task Learning without consistency loss(MT<sub>nc</sub>)** and **Multi-task Learbing with consistency loss(MT)**, of which the MT is trained based on the pretrained MT<sub>nc</sub> model. To run the evaluation, 
 
 ### Benchmark Experiments
-The semantic segmentation bechmark were built with three models PointNet++, PointCNN and DGCNN. They are all conducted the MT+HE method for hierarchical learning on the Campus3D dataset. To run different models, one can change the argument `--model` as the indicated model. Following are the reference repository for PyTorch implementation of 3D deep models.
+The semantic segmentation bechmark were built with three models PointNet++, PointCNN and DGCNN. They are all conducted via the MT+HE method for hierarchical learning on the Campus3D dataset. To run different models, one can change the argument `--model` as the indicated model. Following are the reference repository for PyTorch implementation of 3D deep models.
 
 PointNet++ [GitHub Link](https://github.com/yanx27/Pointnet_Pointnet2_pytorch)
 
@@ -59,7 +59,7 @@ DGCNN [GitHub Link](https://github.com/WangYueFt/dgcnn)
 
 ## MODEL ZOO
 ### Models
-｜#|Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
+｜No.|Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 ｜0|PointNet++|'pointnet2'|MC|0|50 epochs(lr=0.01)|cos|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
 ｜1|PointNe++|'pointnet2'|MC|1|50 epochs(lr=0.01)|cos|[MC1](https://drive.google.com/file/d/1oUOyuszPHDjZsRDhdJGwIHXxImllvvRT/view?usp=sharing)|
