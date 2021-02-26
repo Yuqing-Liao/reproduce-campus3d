@@ -23,35 +23,35 @@
 ### Test results for semantic segmentation 
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
-|C1|ground|85.4|||||
-|C1|construction|79.9|||||
-|C2|natural|81.1|||||
-|C2|man_made|58.5|||||
-|C2|construction|78.8|||||
-|C3|natural|79.2|||||
-|C3|play_field|62.9|||||
-|C3|path&stair|8.7|||||
-|C3|driving_road|58.4|||||
-|C3|construction|76.6|||||
-|C4|natural|81.0|||||
-|C4|play_field|57.3|||||
-|C4|path&stair|9.3|||||
-|C4|vehicle|16.6|||||
-|C4|not vehicle|57.9|||||
-|C4|building|76.5|||||
-|C4|link|0.0|||||
-|C4|facility|0.0|||||
-|C5|natural|80.1|||||
-|C5|play_field|52.7|||||
-|C5|sheltered|10.6|||||
-|C5|unsheltered|7.6|||||
-|C5|bus_stop|0.0|||||
-|C5|car|18.1|||||
-|C5|bus|0.0|||||
-|C5|not vehicle|58.1|||||
-|C5|wall|46.5|||||
-|C5|roof|43.1|||||
-|C5|link|0.2|||||
-|C5|artificial_landscape|0.0|||||
-|C5|lamp|0.0|||||
-|C5|others|0.0|||||
+|C1|ground|85.4|86.4||||
+|C1|construction|79.9|80.8||||
+|C2|natural|81.1|82.4||||
+|C2|man_made|58.5|60.9||||
+|C2|construction|78.8|80.8||||
+|C3|natural|79.2|82.4||||
+|C3|play_field|62.9|65.9||||
+|C3|path&stair|8.7|8.2||||
+|C3|driving_road|58.4|60.6||||
+|C3|construction|76.6|80.8||||
+|C4|natural|81.0|82.4||||
+|C4|play_field|57.3|65.9||||
+|C4|path&stair|9.3|8.2||||
+|C4|vehicle|16.6|19.4||||
+|C4|not vehicle|57.9|59.9||||
+|C4|building|76.5|78.2||||
+|C4|link|0.0|0.1||||
+|C4|facility|0.0|0.0||||
+|C5|natural|80.1|82.4||||
+|C5|play_field|52.7|65.9||||
+|C5|sheltered|10.6|7.9||||
+|C5|unsheltered|7.6|7.9||||
+|C5|bus_stop|0.0|0.0||||
+|C5|car|18.1|19.5||||
+|C5|bus|0.0|0.0||||
+|C5|not vehicle|58.1|59.9||||
+|C5|wall|46.5|47.3||||
+|C5|roof|43.1|44.2||||
+|C5|link|0.2|0.1||||
+|C5|artificial_landscape|0.0|0.0||||
+|C5|lamp|0.0|0.0||||
+|C5|others|0.0|0.0||||
