@@ -2,6 +2,7 @@
 ## Introduction
 
 ## Installation
+Install the dependencies using the provided script.
 ```
 conda env create -f environment.yml
 ```
