@@ -1,8 +1,8 @@
 # Campus3D
-## Introduction
-To facilitate the research of 3D deep learning, the supported work `Campus3D` presents a richly annotated 3D point cloud dataset for multiple outdoor scene understanding tasks. The dataset is generated via the photogrammetry processing on unmanned aerial vehicle (UAV) images of campus with 1.6 km<sup>2</sup> area. One key feature of this dataset is the hierarchical multi-label annotation for each point, which introduces a novel task to 3D scene understanding field, namely, the hierarchical segmentation of 3D point cloud. Based such annotations, the paper proposed a two-stage method including multi-task (MT) learning on each level of label hierarchy and hierarchical ensemble (HE) of predicted results to cope with the hierarchical consistency issue. Besides the framework, the paper also established a benchmark of the hierarchical segmentation task containing three commonly-used 3D deep models `PointNet++`, `PointCNN` and `DGCNN`. 
 
-This repository contains a comprehensive and handy open-source package for reproducing the results in the supported paper.
+## Introduction
+The repository contains the re-implementation of this [ACM MM 2020 Paper](https://3d.dataset.site) based on the [repository](https://github.com/shinke-li/Campus3D/). It also presents the reproduced results of the supported paper with trained models in MODEL_ZOO. The reduced version of Campus3D dataset can be donwloaded from the [official website](https://3d.dataset.site) or the [alternative](https://3d.nus.app). 
+
 ## Installation
 The whole package can be downloaded by the following command.
 ```
@@ -13,7 +13,14 @@ Dependencies can be installed using the provided script.
 cd reproduce-campus3d
 pip install -r requirements.txt
 ```
-## Training
+Compressed Campus3D dataset file `campus3d-reduce.zip` can be downloaded from [official website](https://3d.dataset.site). Put it into `data/` and unzip with below script
+```
+cd reproduce-campus3d/data
+unzip campus3d-reduce.zip
+
+```
+
+## Training & Evaluation
 ### Train from scratch
 To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false and then run experiments, eg:
 ```
@@ -28,13 +35,16 @@ cd campus3d
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
-## Evaluation
+### Evaluation
 To apply evaluation of the model on the test set, please first check the configuration files in `config/`. Particularly you need to change the value of `PRETRIANED_MODEL_PATH` to the path of the model to evaluate and then run experiments, eg:
 ```
 cd campus3d
 python run.py --eval true --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the output files will be saved in `check/EXP_NAME`.
+
+## Experiments
+
 ## MODEL ZOO
 ### Models
 |Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
