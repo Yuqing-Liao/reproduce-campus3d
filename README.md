@@ -97,7 +97,7 @@ These results are produced by model No.8, No.9 and No.10.
 |MT+HE|91.4|87.5|86.7|85.0|75.1|
 
 These results are produced by model No.0-4, No.5 and No.8. They demonstrate the effectiveness of the MT+HE method fro HL problem.
-Results with detailed per-class mIoU are displayed below. 
+Results with detailed per-class IoU are displayed below. 
 
 #### Semantic segmentation benchmarks(IoU%) for different HL methods with model PointNet++
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
