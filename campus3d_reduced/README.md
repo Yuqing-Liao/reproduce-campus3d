@@ -22,7 +22,7 @@
 |PointCNN|MT|-1|50 epochs(lr=0.01) +<br>30 epochs(lr=0.01)|cos|0.5|[pointcnn_MT]()|
 ### Test results of semantic segmentation 
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
--:|:-:|:-:|:-:|:-:|:-:|:-
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
 |C1|ground||||||
 |C1|construction||||||
 |C2|natural||||||
