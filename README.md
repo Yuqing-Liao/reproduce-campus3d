@@ -26,7 +26,8 @@ To apply training of the model, please first check the configuration files in `c
 cd campus3d
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
-In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
+The 'EXP_NAME' is the user-defined name. In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
+
 ### Train from pretrained model
 Pretrained models are available on Google Drive, and they can be downloaded through the link presented in the following table. You can train either from the downloaded models or from your own pretrained models. To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false, `PRETRAINED_MODEL_PATH` to the path of the model to train and then run experiments, eg:
 ```
@@ -34,6 +35,7 @@ cd campus3d
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
+
 ### Evaluation
 To apply evaluation of the model on the test set, please first check the configuration files in `config/`. Particularly you need to change the value of `PRETRIANED_MODEL_PATH` to the path of the model to evaluate and then run experiments, eg:
 ```
@@ -43,8 +45,17 @@ python run.py --eval true --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME
 In this way, the output files will be saved in `check/EXP_NAME`.
 
 ## Experiments
-### Heirarchical Learning Experiments
+### Hierarchical Learning (HL) Experiments
+The hierarchical learning experiments were proposed to present the effectiveness of the **Multi-task and Hierarchical Esemble(MT+HE)** method. **Multi-classifiers(MC)** in each level were also proposed for comparison. To run the training, the argument `--mc_level` can be set as **0-4** and **-1** for MC experiments in 0-4 levels and MT+HE experiments in all levels respectively. In addition, the MT training contains two stage **Multi-task without consistency loss(MT<sub>nc<sub>)** and **Multi-task with consistency loss(MT)** . To run the evaluation, 
+
 ### Benchmark Experiments
+The semantic segmentation bechmark were built with three models PointNet++, PointCNN and DGCNN. They are all conducted the MT+HE method for hierarchical learning on the Campus3D dataset. To run different models, one can change the argument `--model` as the indicated model. Following are the reference repository for PyTorch implementation of 3D deep models,
+
+PointNet++ [GitHub Link](https://github.com/yanx27/Pointnet_Pointnet2_pytorch)
+
+PointCNN [GitHub Link](https://github.com/agarret7/PointCNN)
+
+DGCNN [GitHub Link](https://github.com/WangYueFt/dgcnn)
 
 ## MODEL ZOO
 ### Models
@@ -62,7 +73,16 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 |PointCNN|'pointcnn'|MT|-1|50 epochs (lr=0.01) +<br>30 epochs with<br>consistency loss (lr=0.01)|cos|[pointcnn_MT](https://drive.google.com/file/d/1l9kda3z5359aI08ZpdRDJRm6YItvv_3N/view?usp=sharing)|
 |DGCNN|'dgcnn'|MT|-1|50 epochs (lr=0.01) +<br>20 epochs with<br>consistency loss (lr=0.01)|cos|[dgcnn_MT](https://drive.google.com/file/d/1qo157dARwZhZ5R_AUDSbs_bE_T5S0bD-/view?usp=sharing)|
 
-### Semantic segmentation benchmarks(mIoU% and OA%) for three feature learning models with MT+HE 
+### Semantic segmentation benchmarks(OA%) for different HL methods with model PointNet++
+|Method|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
+:-:|:-:|:-:|:-:|:-:|:-:
+|MC|90.8|86.2|84.4|83.6|73.6|
+|MC+HE|91.4|87.4|86.5|84.8|74.9|
+|MT<sub>nc</sub>|90.6|86.0|85.0|83.1|73.3|
+|MT|91.4|87.4|86.7|84.9|75.2|
+|MT+HE|91.4|87.5|86.7|85.0|75.1|
+
+### Semantic segmentation benchmarks (mIoU% and OA%) for models with MT+HE method
 |Benchmark|Model|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 |OA%|PointNet++|91.4|87.5|86.7|85.0|75.1|
@@ -72,16 +92,7 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 |mIoU%|PointCNN|79.7|61.5|42.8|26.3|15.0|
 |mIoU%|DGCNN|89.6|80.1|63.3|43.1|28.4|
 
-### Semantic segmentation benchmarks(OA%) for different HL methods with model PointNet2
-|Method|C<sup>1</sup>|C<sup>2</sup>|C<sup>3</sup>|C<sup>4</sup>|C<sup>5</sup>|
-:-:|:-:|:-:|:-:|:-:|:-:
-|MC|90.8|86.2|84.4|83.6|73.6|
-|MC+HE|91.4|87.4|86.5|84.8|74.9|
-|MT<sub>nc</sub>|90.6|86.0|85.0|83.1|73.3|
-|MT|91.4|87.4|86.7|84.9|75.2|
-|MT+HE|91.4|87.5|86.7|85.0|75.1|
-
-### Semantic segmentation benchmarks(IoU%) for different HL methods with model PointNet2
+### Semantic segmentation benchmarks(IoU%) for different HL methods with model PointNet++
 |Granularity Level|Class|MC|MC+HE|MTnc|MT|MT+HE|
 :-:|:-:|:-:|:-:|:-:|:-:|:-:
 |C<sup>1</sup>|ground|85.4|86.4|85.3|86.1|86.1|
