@@ -60,7 +60,7 @@ DGCNN [GitHub Link](https://github.com/WangYueFt/dgcnn)
 ## MODEL ZOO
 ### Models
 ｜No.|Model|Name|Method|MC Level|Training Process|Scheduler|Download<br>Link|
-:-:|:-:|:-:|:-:|:-:|:-:|:-:
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
 ｜0|PointNet++|'pointnet2'|MC|0|50 epochs(lr=0.01)|cos|[MC0](https://drive.google.com/file/d/1XrCGYfFwFBx6y4O6CY71YFGXFxCUwSbc/view?usp=sharing)|
 ｜1|PointNe++|'pointnet2'|MC|1|50 epochs(lr=0.01)|cos|[MC1](https://drive.google.com/file/d/1oUOyuszPHDjZsRDhdJGwIHXxImllvvRT/view?usp=sharing)|
 ｜2|PointNet++|'pointnet2'|MC|2|50 epochs(lr=0.01)|cos|[MC2](https://drive.google.com/file/d/1peZa8j-HMI4-NCfnSSjpYXrHmI1M3AG1/view?usp=sharing)|
