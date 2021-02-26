@@ -2,7 +2,12 @@
 ## Introduction
 
 ## Installation
-Install the dependencies using the provided script.
+The whole package can be downloaded by the following command.
+```
+mkdir campus3d
+$ git clone https://github.com/Yuqing-Liao/reproduce-campus3d.git
+```
+Dependencies can be installed using the provided script.
 ```
 conda env create -f environment.yml
 ```
@@ -10,6 +15,7 @@ conda env create -f environment.yml
 ### Train from scratch
 To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false and then run experiments, eg:
 ```
+cd campus3d
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
@@ -18,6 +24,7 @@ Pretrained models are available on Google Drive, and they can be downloaded thro
 ## Evaluation
 To apply evaluation of the model on the test set, please first check the configuration files in `config/`. Particularly you need to change the value of `PRETRIANED_MODEL_PATH` to the path of the model to evaluate and then run experiments, eg:
 ```
+cd campus3d
 python run.py --eval true --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the output files will be saved in `check/EXP_NAME`.
