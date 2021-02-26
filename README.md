@@ -6,13 +6,12 @@ This repository contains a comprehensive and handy open-source package for repro
 ## Installation
 The whole package can be downloaded by the following command.
 ```
-mkdir campus3d
-$ git clone https://github.com/Yuqing-Liao/reproduce-campus3d.git
+git clone https://github.com/Yuqing-Liao/reproduce-campus3d.git
 ```
 Dependencies can be installed using the provided script.
 ```
-cd campus3d
-conda env create -f environment.yml
+cd reproduce-campus3d
+pip install -r requirements.txt
 ```
 ## Training
 ### Train from scratch
