@@ -1,6 +1,6 @@
 # Campus3D
 ## Introduction
-
+To facilitate the research of 3D deep learning, the supported work `Campus3D` presents a richly annotated 3D point cloud dataset for multiple outdoor scene understanding tasks. The dataset is generated via the photogrammetry processing on unmanned aerial vehicle (UAV) images of campus with 1.6 𝑘𝑚^2^ area. One key feature of this dataset is the hierarchical multi-label annotation for each point, which introduces a novel task to 3D scene understanding field, namely, the hierarchical segmentation of 3D point cloud. Based such annotations, the paper proposed a two-stage method including multi-task (MT) learning on each level of label hierarchy and hierarchical ensemble (HE) of predicted results to cope with the hierarchical consistency issue. Besides the framework, the paper also established a benchmark of the hierarchical segmentation task containing three commonly-used 3D deep models `PointNet++`, `PointCNN` and `DGCNN`. This repository contains a comprehensive and handy open-source package for reproducing the results in the supported paper.
 ## Installation
 The whole package can be downloaded by the following command.
 ```
@@ -9,6 +9,7 @@ $ git clone https://github.com/Yuqing-Liao/reproduce-campus3d.git
 ```
 Dependencies can be installed using the provided script.
 ```
+cd campus3d
 conda env create -f environment.yml
 ```
 ## Training
