@@ -13,6 +13,7 @@ python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 ```
 In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
 ### Train from pretrained model
+Pretrained models are available on Google Drive, and they can be downloaded through the link presented in the following table.
 ## Evaluation
 To apply evaluation of the model on the test set:
 ```
