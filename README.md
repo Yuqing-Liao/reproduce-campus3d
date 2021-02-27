@@ -13,7 +13,7 @@ Dependencies can be installed using the provided script.
 cd reproduce-campus3d
 pip install -r requirements.txt
 ```
-Compressed Campus3D dataset file `campus3d-reduce.zip` can be downloaded from [official website](https://3d.dataset.site). Put it into `data/` and unzip with below script
+Compressed Campus3D dataset file `campus3d-reduce.zip` can be downloaded from [official website](https://3d.dataset.site). Put it into `data/` and unzip with below script.
 ```
 cd reproduce-campus3d/data
 unzip campus3d-reduce.zip
