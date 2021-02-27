@@ -34,8 +34,7 @@ def test(args, io, cfg, HM):
             model = PointCNN(cfg).to(device)
         else:
             raise Exception("Not implemented")
-        if cfg.TRAIN.IS_PRETRAINED:
-            model = load_model(args, cfg, model)
+        model = load_model(args, cfg, model)
     else:
         models = []
         for i in range(5):
