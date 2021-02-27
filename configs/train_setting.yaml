@@ -6,7 +6,8 @@ TRAIN:
   MAX_EPOCH: 50
   SCHEDULER: 'step' # 'step'
   IS_PRETRAINED: false
-  PRETRAINED_MODEL_PATH: 'checkpoints/MC4_/models/model.t7'
+  PRETRAINED_MODEL_PATH:
+    - 'checkpoints/MC4_/models/model.t7'
   OUTPUT_DIR: 'log/'
   DROPOUT_RATE: 0.5
   CONSISTENCY_LOSS: false
