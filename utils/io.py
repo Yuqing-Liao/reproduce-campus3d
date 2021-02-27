@@ -21,8 +21,8 @@ def save_model(model, cfg, args, name):
         torch.save(model.module.state_dict(), 'checkpoints/%s/models/' % (args.exp_name)+name+'.t7')
         
         
-def load_model(args, cfg, model):
-      model.load_state_dict(torch.load(cfg.TRAIN.PRETRAINED_MODEL_PATH))
+def load_model(args, cfg, model, level=0):
+      model.load_state_dict(torch.load(cfg.TRAIN.PRETRAINED_MODEL_PATH[level]))
       if len(cfg.DEVICES.GPU_ID) > 1:
           model = nn.DataParallel(model, device_ids=cfg.DEVICES.GPU_ID)
       return model
