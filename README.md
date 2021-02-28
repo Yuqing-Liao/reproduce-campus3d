@@ -1,4 +1,4 @@
-# Campus3D
+# Reproducibility of "Campus3D:A Photogrammetry Point Cloud Benchmark for Outdoor Scene Hierarchical Understanding"
 
 ## Introduction
 The repository contains the re-implementation of this [ACM MM 2020 Paper](https://3d.dataset.site) based on the [repository](https://github.com/shinke-li/Campus3D/). It also presents the reproduced results of the supported paper with trained models in **MODEL ZOO**. The reduced version of Campus3D dataset can be donwloaded from the [official website](https://3d.dataset.site) or the [alternative](https://3d.nus.app). 
@@ -46,7 +46,9 @@ In this way, the output files will be saved in `check/EXP_NAME`.
 
 ## Experiments
 ### Hierarchical Learning (HL) Experiments
-The hierarchical learning experiments were proposed to present the effectiveness of the **Multi-task and Hierarchical Esemble(MT+HE)** method. **Multi-classifiers(MC)** in each level were also proposed for comparison. To run the training, the argument `--mc_level` can be set as **0-4** and **-1** for MC experiments in 0-4 levels and MT+HE experiments in all levels respectively. In addition, the MT training contains two stage **Multi-task Learning without consistency loss(MT<sub>nc</sub>)** and **Multi-task Learbing with consistency loss(MT)**, of which the MT is trained based on the pretrained MT<sub>nc</sub> model. To run the evaluation, the argument '--mc_level' can be set as  any one from **0-4** to test 5 MC models altogether for MC and MC+HE results, or set as **-1** to test the target model for MT<sub>nc</sub> or MT(+HE) results.
+The hierarchical learning experiments were proposed to present the effectiveness of the **Multi-task and Hierarchical Esemble(MT+HE)** method. **Multi-classifiers(MC)** in each level were also proposed for comparison. To run the training, the argument `--mc_level` can be set as **0-4** and **-1** for MC experiments in 0-4 levels and MT+HE experiments in all levels respectively. In addition, the MT training contains two stage **Multi-task Learning without consistency loss(MT<sub>nc</sub>)** and **Multi-task Learning with consistency loss(MT)**, of which the MT is trained based on the pretrained MT<sub>nc</sub> model. 
+
+To run the evaluation, the argument `--mc_level` in run script can be set as any one from **0-4** to test 5 MC models altogether for MC and MC+HE results, or set as **-1** to test the target model for MT<sub>nc</sub> or MT(+HE) results. Particularly for MC evaluation, the `PRETRAINED_MODEL_PATH` is supposed to be set as the list of 5 model paths in the config file.
 
 ### Benchmark Experiments
 The semantic segmentation bechmark were built with three models PointNet++, PointCNN and DGCNN. They are all conducted via the MT+HE method for hierarchical learning on the Campus3D dataset. To run different models, one can change the argument `--model` as the indicated model. Following are the reference repository for PyTorch implementation of 3D deep models.
