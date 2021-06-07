@@ -21,7 +21,7 @@ unzip campus3d-reduce.zip
 
 ## Training & Evaluation
 ### Train from scratch
-To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false and then run experiments, eg:
+To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to **False** and then run experiments, eg:
 ```
 cd reproduce-campus3d
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
@@ -29,7 +29,7 @@ python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
 The 'EXP_NAME' is the user-defined name. In this way, the models will be saved in `checkpoints/EXP_NAME/models`, and other output files will be saved in `checkpoints/EXP_NAME`.
 
 ### Train from pretrained model
-Pretrained models are available on Google Drive, and they can be downloaded through the link presented in the following table. You can train either from the downloaded models or from your own pretrained models. To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to false, `PRETRAINED_MODEL_PATH` to the path of the model to train and then run experiments, eg:
+Pretrained models are available on Google Drive, and they can be downloaded through the link presented in the following table. You can train either from the downloaded models or from your own pretrained models. To apply training of the model, please first check the configuration files in `config/`. Particularly you need to change the value of `IS_PRETRAINED` to **True**, `PRETRAINED_MODEL_PATH` to the path of the model to train and then run experiments, eg:
 ```
 cd reproduce-campus3d
 python run.py --model 'pointnet2' --mc_level -1 --exp_name 'EXP_NAME'
