@@ -4,13 +4,17 @@ TRAIN:
   BATCH_SIZE: 32
   #orginal 16
   MAX_EPOCH: 50
-  SCHEDULER: 'step' # 'step'
-  IS_PRETRAINED: false
-  PRETRAINED_MODEL_PATH:
-    - 'checkpoints/MC4_/models/model.t7'
-  OUTPUT_DIR: 'log/'
+  SCHEDULER: step # adam
+  IS_PRETRAINED: False
+  PRETRAINED_MODEL_PATH: checkpoints/pointnet2_MT.t7
+  #  - checkpoints/MC0.t7
+  #  - checkpoints/MC1.t7
+  #  - checkpoints/MC2.t7
+  #  - checkpoints/MC3.t7
+  #  - checkpoints/MC4.t7
+  OUTPUT_DIR: log/
   DROPOUT_RATE: 0.5
-  CONSISTENCY_LOSS: false
+  CONSISTENCY_LOSS: False
   CONSISTENCY_WEIGHTS:
     - 0.05
     - 0.05
