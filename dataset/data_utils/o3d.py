@@ -17,10 +17,14 @@ def create_point_cloud(points, colors=None):
         pcd.points = open3d.utility.Vector3dVector(colors)
     return pcd
 
-def voxel_sampling(points, voxel_size):
+def voxel_sampling(points, voxel_size, return_index=False):
     pcd = create_point_cloud(points)
-    downpcd = pcd.voxel_down_sample(voxel_size=voxel_size)
-    return np.asarray(downpcd.points)
+    if return_index:
+        downpcd, inds, _ = pcd.voxel_down_sample_and_trace(voxel_size=voxel_size)
+        return downpcd, inds
+    else:
+        downpcd = pcd.voxel_down_sample(voxel_size=voxel_size)
+        return np.asarray(downpcd.points)
 
 def kdtree(points):
     pcd = create_point_cloud(points=points)
