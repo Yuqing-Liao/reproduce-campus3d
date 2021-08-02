@@ -62,16 +62,17 @@ def train(args, io, cfg, HM):
         raise Exception("Not implemented")
     if cfg.TRAIN.IS_PRETRAINED:
         model = load_model(args, cfg, model)
-        
+    elif len(cfg.DEVICES.GPU_ID) > 1:
+        model = nn.DataParallel(model, device_ids = cfg.DEVICES.GPU_ID)
     train_dataset = TorchDataset("TRAIN_SET", params=cfg.DATASET, is_training=True, )
     train_loader = TorchDataLoader(dataset=train_dataset, batch_size=cfg.TRAIN.BATCH_SIZE,
-                                   num_workers=4)
+                                   num_workers=int(cfg.TRAIN.BATCH_SIZE/4))
                                    
     validation_dataset = TorchDataset("VALIDATION_SET", params=cfg.DATASET,
                                       is_training=True, )
     validation_loader = TorchDataLoader(dataset=validation_dataset,
                                         batch_size=cfg.TRAIN.BATCH_SIZE,
-                                        num_workers=4)
+                                        num_workers=int(cfg.TRAIN.BATCH_SIZE/4))
     io.cprint('length of train loader: %d' % (len(train_loader)))
 
     HCrossEntropy = HeirarchicalCrossEntropyLoss(train_dataset.data_sampler.label_weights,device)
@@ -214,8 +215,7 @@ if __name__ == "__main__":
     torch.manual_seed(cfg.DEVICES.SEED)
 
     if args.cuda:
-        if len(cfg.DEVICES.GPU_ID) == 1:
-            torch.cuda.set_device(cfg.DEVICES.GPU_ID[0])
+        torch.cuda.set_device(cfg.DEVICES.GPU_ID[0])
         io.cprint(
             'Using GPU : ' + str(torch.cuda.current_device()) + ' from ' + str(torch.cuda.device_count()) + ' devices')
         torch.cuda.manual_seed(cfg.DEVICES.SEED)
