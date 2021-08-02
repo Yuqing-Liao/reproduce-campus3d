@@ -25,7 +25,7 @@ def load_model(args, cfg, model, level=0):
     model_path = cfg.TRAIN.PRETRAINED_MODEL_PATH
     if model_path[-1] == ']': #MC models
         model_path = model_path[1:-1].split(',')
-        model_path = ''.join([s for s in model_path[level] if s not in [' ', '\'', '\"'])
+        model_path = ''.join([s for s in model_path[level] if s not in [' ', '\'', '\"']])
     assert os.path.isfile(model_path), '\'{}\' model file does not exist.'.format(model_path)
     model.load_state_dict(torch.load(model_path, map_location=lambda storage, loc: storage))
     if len(cfg.DEVICES.GPU_ID) > 1:
