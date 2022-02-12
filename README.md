@@ -1,7 +1,7 @@
 # Reproducibility of "Campus3D:A Photogrammetry Point Cloud Benchmark for Outdoor Scene Hierarchical Understanding"
 ![](SixRegion.png)
 ## Introduction
-The repository contains the re-implementation of this [ACM MM 2020 Paper](https://3d.dataset.site) based on the [repository](https://github.com/shinke-li/Campus3D/). It also presents the reproduced results of the supported paper with trained models in **MODEL ZOO**. The reduced version of Campus3D dataset can be donwloaded from the [official website](https://3d.dataset.site) or the [alternative](https://3d.nus.app). 
+The repository contains the re-implementation of this [ACM MM 2020 Paper](https://3d.dataset.site) based on the [repository](https://github.com/shinke-li/Campus3D/). It also presents the reproduced results of the supported paper with trained models in **MODEL ZOO**. The reduced version of Campus3D dataset can be donwloaded from the [official website](https://3d.nus.app). 
 Compared to the original repo, the main updates of this reproducibilty repo are:
 * Transfer the model implementation from TenforFlow with precompling requiremnets to pure PyTorch
 * Add DGCNN and PointCNN to the benchmark models. Report the detailed benchmarks with mutiple networks and their pre-trained models.
